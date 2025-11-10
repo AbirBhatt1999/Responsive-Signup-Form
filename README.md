@@ -9,7 +9,7 @@ It demonstrates modern form design, client-side validation, and password visibil
 
 -  **Responsive Layout** built with **Bootstrap 5**
 -  **Password & Confirm Password Validation** (ensures match)
-- 👁 **Show/Hide Password Eye Icon** for better usability
+-  **Show/Hide Password Eye Icon** for better usability
 -  Validates Email, Phone, and all required inputs
 -  Dropdown for **Country Selection**
 -  **Gender Selection** (Radio Buttons)
@@ -37,17 +37,25 @@ It demonstrates modern form design, client-side validation, and password visibil
 
 ## Key Highlights
 
--Integrated Bootstrap validation for real-time user feedback.
+- Integrated Bootstrap validation for real-time user feedback.
 
--Added Password Eye Toggle using Font Awesome icons for better UX.
+- Added Password Eye Toggle using Font Awesome icons for better UX.
 
--Ensures proper form validation before submission.
+- Ensures proper form validation before submission.
 
--Modern typography using Google Fonts (Baloo 2).
+- Modern typography using Google Fonts (Baloo 2).
 
 ## Conclusion
 
 This project showcases how a well-designed Signup Form can blend simplicity, responsiveness, and validation using Bootstrap and JavaScript.
 -It’s a great starting point for connecting frontend forms with backend systems like PHP, Node.js, or Firebase in future projects.
 
+## Author
 
+**Abir Bhattacharjee**
+-  Final-Year B.Tech (CSE) Student | Web Developer | Tech Enthusiast
+-  Passionate about frontend development and UI/UX design.
+ **Connect with me:**  
+- [LinkedIn](https://www.linkedin.com/in/abir-bhattacharjee-13386028b)  
+- [GitHub](https://github.com/AbirBhatt1999)  
+-  Email: [abirbhattacharjee2018@gmail.com](mailto:abirbhattacharjee2018@gmail.com)
