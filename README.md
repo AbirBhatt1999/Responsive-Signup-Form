@@ -55,7 +55,8 @@ This project showcases how a well-designed Signup Form can blend simplicity, res
 **Abir Bhattacharjee**
 -  Final-Year B.Tech (CSE) Student | Web Developer | Tech Enthusiast
 -  Passionate about frontend development and UI/UX design.
- **Connect with me:**  
+-  
+## **Connect with me:**  
 - [LinkedIn](https://www.linkedin.com/in/abir-bhattacharjee-13386028b)  
 - [GitHub](https://github.com/AbirBhatt1999)  
 -  Email: [abirbhattacharjee2018@gmail.com](mailto:abirbhattacharjee2018@gmail.com)
