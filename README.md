@@ -1,11 +1,11 @@
-# 🧍‍♂️ Responsive Signup Form using Bootstrap & JavaScript
+#  Responsive Signup Form using Bootstrap & JavaScript
 
 This project is a **responsive Signup Form** created using **HTML, CSS, Bootstrap 5**, and **JavaScript**.  
 It demonstrates modern form design, client-side validation, and password visibility toggle functionality for an interactive user experience.
 
 ---
 
-## 🚀 Features
+##  Features
 
 -  **Responsive Layout** built with **Bootstrap 5**
 -  **Password & Confirm Password Validation** (ensures match)
@@ -45,7 +45,7 @@ It demonstrates modern form design, client-side validation, and password visibil
 
 -Modern typography using Google Fonts (Baloo 2).
 
-##Conclusion
+## Conclusion
 
 This project showcases how a well-designed Signup Form can blend simplicity, responsiveness, and validation using Bootstrap and JavaScript.
 -It’s a great starting point for connecting frontend forms with backend systems like PHP, Node.js, or Firebase in future projects.
