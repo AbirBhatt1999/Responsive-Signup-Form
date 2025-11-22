@@ -1,47 +1,77 @@
- 
-    // Password Toggle Feature
-    const togglePassword = document.querySelector('#togglePassword');
-    const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
-    const password = document.querySelector('#password');
-    const confirmPassword = document.querySelector('#confirmPassword');
+// script.js
 
-    togglePassword.addEventListener('click', function () {
-      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      password.setAttribute('type', type);
-      this.classList.toggle('fa-eye-slash');
+// Run after DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("signupForm");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirmPassword");
+
+  // 🔐 Password show/hide toggle
+  function setupPasswordToggle(inputId, toggleId) {
+    const input = document.getElementById(inputId);
+    const toggle = document.getElementById(toggleId);
+
+    if (!input || !toggle) return;
+
+    toggle.addEventListener("click", function () {
+      const isPassword = input.getAttribute("type") === "password";
+      input.setAttribute("type", isPassword ? "text" : "password");
+
+      // Change eye icon
+      toggle.classList.toggle("fa-eye");
+      toggle.classList.toggle("fa-eye-slash");
     });
+  }
 
-    toggleConfirmPassword.addEventListener('click', function () {
-      const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
-      confirmPassword.setAttribute('type', type);
-      this.classList.toggle('fa-eye-slash');
-    });
+  setupPasswordToggle("password", "togglePassword");
+  setupPasswordToggle("confirmPassword", "toggleConfirmPassword");
 
-    // Bootstrap Validation + Password Match
-    (function () {
-      'use strict'
-      var forms = document.querySelectorAll('.needs-validation')
-      Array.from(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          let password = form.querySelector('#password');
-          let confirmPassword = form.querySelector('#confirmPassword');
+  // ✅ Confirm password validation
+  function validatePasswordMatch() {
+    if (confirmPassword.value === "") {
+      confirmPassword.setCustomValidity("Please confirm your password.");
+    } else if (password.value !== confirmPassword.value) {
+      confirmPassword.setCustomValidity("Passwords do not match.");
+    } else {
+      confirmPassword.setCustomValidity("");
+    }
+  }
 
-          if (!form.checkValidity() || password.value !== confirmPassword.value) {
-            event.preventDefault();
-            event.stopPropagation();
+  password.addEventListener("input", validatePasswordMatch);
+  confirmPassword.addEventListener("input", validatePasswordMatch);
 
-            if (password.value !== confirmPassword.value) {
-              confirmPassword.setCustomValidity("Passwords do not match");
-              confirmPassword.classList.add('is-invalid');
-            } else {
-              confirmPassword.setCustomValidity("");
-              confirmPassword.classList.remove('is-invalid');
-            }
-          } else {
-            confirmPassword.setCustomValidity("");
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    })()
+  // ✅ Bootstrap-style validation + submit handler
+  form.addEventListener("submit", function (event) {
+    validatePasswordMatch(); // check passwords first
 
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      // Form is valid – demo: prevent real submit and show message
+      event.preventDefault();
+      alert("Signup successful! 🎉");
+
+      form.reset();
+      form.classList.remove("was-validated");
+
+      // Reset password fields & icons
+      password.setAttribute("type", "password");
+      confirmPassword.setAttribute("type", "password");
+
+      const tp = document.getElementById("togglePassword");
+      const tcp = document.getElementById("toggleConfirmPassword");
+
+      if (tp) {
+        tp.classList.remove("fa-eye-slash");
+        tp.classList.add("fa-eye");
+      }
+      if (tcp) {
+        tcp.classList.remove("fa-eye-slash");
+        tcp.classList.add("fa-eye");
+      }
+    }
+
+    form.classList.add("was-validated");
+  });
+});
