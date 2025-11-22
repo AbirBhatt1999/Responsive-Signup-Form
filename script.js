@@ -1,4 +1,4 @@
- <script>
+ 
     // Password Toggle Feature
     const togglePassword = document.querySelector('#togglePassword');
     const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
@@ -44,4 +44,4 @@
         }, false);
       });
     })()
-  </script>
+
